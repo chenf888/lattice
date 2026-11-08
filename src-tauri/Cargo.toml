@@ -1,0 +1,44 @@
+[package]
+name = "lattice"
+version = "0.1.0"
+description = "Lattice — 本地优先的数据库工作台"
+authors = ["chenf888"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "lattice_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+csv = "1"
+encoding_rs = "0.8"
+keyring = "3.6.3"
+log = { version = "0.4", features = ["alloc"] }
+mysql_async = { version = "0.37.1", default-features = false, features = ["default-rustls-ring"] }
+rfd = "0.17.2"
+rusqlite = { version = "0.32", features = ["bundled"] }
+rustls = { version = "0.23.46", default-features = false, features = ["logging", "ring", "std", "tls12"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.154"
+tauri = { version = "2", features = [] }
+tauri-plugin-notification = "2"
+thiserror = "2"
+tokio = { version = "1.53.3", features = ["macros", "rt", "sync", "time"] }
+tokio-postgres = "0.7.13"
+tokio-postgres-rustls = "0.14.0"
+webpki-roots = "1.0.11"
+
+# 后续阶段引入：tokio / tokio-postgres / mysql_async / keyring（阶段二）、
+# @tanstack/react-table / react-virtual / codemirror（阶段三）、recharts（阶段四）
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
+

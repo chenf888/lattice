@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Lattice",
+  "version": "0.1.0",
+  "identifier": "dev.lattice.app",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "pnpm typecheck && pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg", "msi", "appimage"],
+    "publisher": "chenf888",
+    "copyright": "Copyright © 2026 chenf888",
+    "category": "DeveloperTool",
+    "shortDescription": "本地优先的跨平台数据库工作台",
+    "longDescription": "Lattice 是一款面向开发者的本地优先数据库工作台：多数据源连接、SQL 编辑执行、虚拟化结果网格、ER 图、数据可视化、导入导出与后台任务中心，全程离线可用。",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
