@@ -16,20 +16,11 @@
   <img src="https://img.shields.io/badge/license-MIT-green" alt="license" />
 </p>
 
+<p align="center">
+  <a href="README.md">中文</a> | <a href="README.en.md">English</a>
+</p>
+
 ---
-
-## 目录
-
-- [简介](#简介)
-- [功能特性](#功能特性)
-- [支持的数据库](#支持的数据库)
-- [下载安装](#下载安装)
-- [从源码构建](#从源码构建)
-- [项目结构](#项目结构)
-- [架构要点](#架构要点)
-- [开发与质量门](#开发与质量门)
-- [路线图](#路线图)
-- [许可证](#许可证)
 
 ## 简介
 
